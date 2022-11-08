@@ -50,6 +50,7 @@ public class WelcomeTwo extends AppCompatActivity {
         Log.d("Date", "Year=" + year + " Month=" + (month + 1) + " day=" + dayOfMonth);
 
     }
+    //anlflaef
 
     private void showDate()  {
          year = this.datePicker.getYear();
@@ -57,7 +58,7 @@ public class WelcomeTwo extends AppCompatActivity {
          day = this.datePicker.getDayOfMonth();
 
     //    Toast.makeText(this, "Date: " + day+"-"+ (month + 1) +"-"+ year, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this ,MainActivity.class);
+        Intent intent = new Intent(this ,DiabetScreen.class);
         startActivity(intent);
     }
 }

@@ -18,7 +18,9 @@ public class Welcome extends AppCompatActivity {
     static final String PREF_NAME = "DATA";
     static final String nomShared = "nom";
     static final String prenomShared = "prenom";
-
+    static final String Diabete = "diabete";
+    static final String poidShared = "poid";
+    static final String Tension = "tension";
     private TextInputEditText nomEdit;
     private TextInputLayout nomLayout;
 
