@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resultat"
+
+    >
+
+
+    <TextView
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Résultat du test"
+        android:textAlignment="center"
+        android:textSize="35dp"
+
+
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="374dp"
+        android:layout_height="276dp"
+        android:background="@drawable/btnmain2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.199"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout7"
+            android:layout_width="343dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="104dp"
+
+            android:background="@drawable/btnmain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="135dp"
+                android:layout_height="126dp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/progressbar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView16"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.333"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="197dp"
+                android:layout_height="64dp"
+                android:text="Vous avez 5 symptomes sur 6"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+
+
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.404"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5/6"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar2"
+                app:layout_constraintStart_toStartOf="@+id/progressBar2"
+                app:layout_constraintTop_toTopOf="@+id/progressBar2"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="148dp"
+            android:layout_height="28dp"
+            android:text="Nom du test :"
+            android:textColor="#88FFFFFF"
+            android:textSize="23dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.342" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corona virus test"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintVertical_bias="0.526" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Docteur que vous pouvez consulter !"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="463dp"
+        android:layout_height="212dp"
+        android:layout_margin="10dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.162"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="104dp"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/appCompatBon"
+                android:layout_width="376dp"
+                android:layout_height="60dp"
+                android:layout_margin="3dp"
+
+                app:cardCornerRadius="20sp"
+                app:cardElevation="10dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="574dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/idUrlImg1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginBottom="140dp"
+                    android:elevation="15dp"
+                    android:padding="5dp"
+                    android:src="@drawable/khaled"
+                    app:shapeAppearanceOverlay="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Dr. Khaled Abdelmoumen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="Radés"
+
+
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnmMore"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="15dp"
+
+                    android:background="@drawable/nextt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="Généraliste"
+
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/appCompat"
+                android:layout_width="376dp"
+                android:layout_height="57dp"
+                android:layout_margin="3dp"
+
+                app:cardCornerRadius="20sp"
+                app:cardElevation="10dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="649dp">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/idUrlImg2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginBottom="140dp"
+                    android:elevation="15dp"
+                    android:padding="5dp"
+                    android:src="@drawable/sahar"
+                    app:shapeAppearanceOverlay="@style/Circular"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Dr. Sahar Gharrad"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="Boumhal"
+
+
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="15dp"
+
+                    android:background="@drawable/nextt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="Génecologue"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/appCompaat"
+                android:layout_width="376dp"
+                android:layout_height="57dp"
+                android:layout_margin="3dp"
+
+                app:cardCornerRadius="20sp"
+                app:cardElevation="10dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="649dp">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/idUrlImg2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginBottom="140dp"
+                    android:elevation="15dp"
+                    android:padding="5dp"
+                    android:src="@drawable/khaled"
+                    app:shapeAppearanceOverlay="@style/Circular"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Dr. Khaled Abdelmoumen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="30dp"
+
+
+                    android:text="Rades"
+
+
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="15dp"
+
+                    android:background="@drawable/nextt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="Génecologue"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="385dp"
+        android:layout_height="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="0.99">
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#0692b4"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:fabCradleVerticalOffset="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/homeImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="4dp"
+
+                        app:srcCompat="@drawable/bottom_btn1" />
+
+                    <TextView
+                        android:id="@+id/home"
+                        android:layout_width="45dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="4dp"
+                        android:text="Home"
+
+                        android:textColor="#FFC020"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/bottom_btn2" />
+
+                    <TextView
+                        android:id="@+id/profile"
+                        android:layout_width="45dp"
+                        android:layout_height="25dp"
+
+                        android:text="Profile"
+
+                        android:textColor="#ffffff"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:id="@+id/consulterImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/bottom_btn1" />
+
+                    <TextView
+                        android:id="@+id/consulter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="Home"
+                        android:textAlignment="center"
+                        android:textColor="#F85500"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/historiqueImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/historique"
+                        app:tint="#FFC020" />
+
+                    <TextView
+                        android:id="@+id/historique"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text="Historique"
+                        android:textColor="#FFC020"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/ic_logout" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="Log Out"
+
+                        android:textColor="#ffffff"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFC020"
+            android:src="@drawable/medical"
+            app:backgroundTint="#FFC020"
+            app:layout_anchor="@id/app_bar"
+            app:maxImageSize="30dp"
+            app:tint="#ffffff" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
