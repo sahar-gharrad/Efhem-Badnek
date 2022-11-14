@@ -3,6 +3,7 @@ package com.example.efhem_rouhek;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,11 @@ public class WelcomeTwo extends AppCompatActivity {
 
     private DatePicker datePicker;
     int year = 0;
+    private SharedPreferences sharedpreference;
     int month =0;
     int day =0;
+    static final String PREF_NAME = "DATA";
+    static final String DataShared = "date";
     private Button Suivant;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class WelcomeTwo extends AppCompatActivity {
          year = calendar.get(Calendar.YEAR);
         month  = calendar.get(Calendar.MONTH);
          day = calendar.get(Calendar.DAY_OF_MONTH);
-
+        sharedpreference = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         this.datePicker.init( year, month , day , new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
@@ -56,7 +60,15 @@ public class WelcomeTwo extends AppCompatActivity {
          year = this.datePicker.getYear();
          month = this.datePicker.getMonth(); // 0 - 11
          day = this.datePicker.getDayOfMonth();
+        SharedPreferences.Editor myEdit = sharedpreference.edit();
 
+// Storing the key and its value as the data fetched from edittext
+        myEdit.putString(DataShared, day+"/"+ (month + 1) +"/"+ year);
+
+        // Once the changes have been made,
+// we need to commit to apply those changes made,
+// otherwise, it will throw an error
+        myEdit.commit();
     //    Toast.makeText(this, "Date: " + day+"-"+ (month + 1) +"-"+ year, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this ,DiabetScreen.class);
         startActivity(intent);

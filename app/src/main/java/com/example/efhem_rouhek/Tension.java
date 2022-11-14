@@ -1,7 +1,8 @@
 package com.example.efhem_rouhek;
 
-import static com.example.efhem_rouhek.Welcome.Diabete;
+
 import static com.example.efhem_rouhek.Welcome.PREF_NAME;
+import static com.example.efhem_rouhek.Welcome.TensionShared;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,7 @@ public class Tension extends AppCompatActivity {
 
     private Button Non;
     private Button Jsp;
-    private Button suivant;
+
     private SharedPreferences sharedpreference;
 
     @Override
@@ -31,7 +32,7 @@ public class Tension extends AppCompatActivity {
         Oui= findViewById(R.id.btnOui);
         Non= findViewById(R.id.btnNon);
         Jsp= findViewById(R.id.btnJsp);
-        Jsp= findViewById(R.id.btnSuivant);
+
         Oui.setOnClickListener(view ->
         {
 
@@ -40,17 +41,18 @@ public class Tension extends AppCompatActivity {
             SharedPreferences.Editor myEdit = sharedpreference.edit();
 
 // Storing the key and its value as the data fetched from edittext
-            myEdit.putString(Diabete, "Oui");
+            myEdit.putString(TensionShared, "OUI");
             // Once the changes have been made,
 // we need to commit to apply those changes made,
 // otherwise, it will throw an error
             myEdit.commit();
-            String s1 = sharedpreference.getString(Diabete, "");
+            String s1 = sharedpreference.getString(TensionShared, "");
             System.out.println(s1);
 
 
             Intent intent = new Intent(this ,Poid_screen.class);
             startActivity(intent);
+            finish();
 
 
         });
@@ -62,19 +64,19 @@ public class Tension extends AppCompatActivity {
             SharedPreferences.Editor myEdit = sharedpreference.edit();
 
 // Storing the key and its value as the data fetched from edittext
-            myEdit.putString(Diabete, "Non");
+            myEdit.putString(TensionShared, "NON");
             // Once the changes have been made,
 // we need to commit to apply those changes made,
 // otherwise, it will throw an error
             myEdit.commit();
-            String s1 = sharedpreference.getString(Diabete, "");
+            String s1 = sharedpreference.getString(TensionShared, "");
             System.out.println(s1);
 
 
             Intent intent = new Intent(this ,Poid_screen.class);
             startActivity(intent);
 
-
+            finish();
         });
         Jsp.setOnClickListener(view ->
         {
@@ -84,19 +86,19 @@ public class Tension extends AppCompatActivity {
             SharedPreferences.Editor myEdit = sharedpreference.edit();
 
 // Storing the key and its value as the data fetched from edittext
-            myEdit.putString(Diabete, "Jsp");
+            myEdit.putString(TensionShared, "JSP");
             // Once the changes have been made,
 // we need to commit to apply those changes made,
 // otherwise, it will throw an error
             myEdit.commit();
-            String s1 = sharedpreference.getString(Diabete, "");
+            String s1 = sharedpreference.getString(TensionShared, "");
             System.out.println(s1);
 
 
             Intent intent = new Intent(this ,Poid_screen.class);
             startActivity(intent);
 
-
+            finish();
         });
 
 

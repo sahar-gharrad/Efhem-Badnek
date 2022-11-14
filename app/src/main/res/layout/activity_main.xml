@@ -225,11 +225,11 @@
             tools:ignore="MissingConstraints,UnknownIdInLayout" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Bonjour Sahar"
+            android:text="Bonjour ,"
             android:textColor="#838383"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -270,6 +270,7 @@
 
 
     <TextView
+        android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -285,195 +286,34 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="361dp"
-        android:layout_height="122dp"
-        android:layout_margin="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="0.136"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardCardio"
-                android:layout_width="133dp"
-                android:layout_height="107dp"
-                android:layout_margin="3dp"
-                android:layout_marginStart="16dp"
-                app:cardBackgroundColor="#ff7272"
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-
-                app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
-                app:layout_constraintEnd_toStartOf="@+id/button"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:layout_constraintVertical_bias="0.071"
-                tools:ignore="MissingConstraints">
-
-                <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-
-                    android:background="@drawable/heart" />
-
-                <TextView
-                    android:layout_width="89dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Cardiologie"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:textStyle="italic"
-
-
-                    />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/more1"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="75dp"
-                    android:background="@drawable/more"
-
-                    />
-
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/appCompatButton2"
-                android:layout_width="133dp"
-                android:layout_height="107dp"
-                android:layout_margin="3dp"
-                android:layout_marginStart="16dp"
-                app:cardBackgroundColor="#0692b4"
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
-                app:layout_constraintEnd_toStartOf="@+id/button"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/appCompatButton"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:layout_constraintVertical_bias="0.08"
-                tools:ignore="MissingConstraints">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/tooth" />
-
-                <TextView
-                    android:layout_width="89dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Tooth"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:textStyle="italic"
-
-
-                    />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/more2"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="75dp"
-                    android:background="@drawable/more"
-
-                    />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/appCompatButton3"
-                android:layout_width="133dp"
-                android:layout_height="107dp"
-                android:layout_margin="3dp"
-                android:layout_marginStart="16dp"
-                app:cardBackgroundColor="#ffb251"
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:layout_constraintVertical_bias="0.028"
-                tools:ignore="MissingConstraints">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="46dp"
-                    android:layout_height="43dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/coronavirus" />
-
-                <TextView
-                    android:layout_width="89dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Covid19"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:textStyle="italic"
-
-
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/more3"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="75dp"
-                    android:background="@drawable/more"
-
-                    />
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-
-    </HorizontalScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
+        android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="25dp"
         android:text="Plus proche docteurs"
         android:textColor="#838383"
-        android:textSize="20sp"
 
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.342"
         tools:ignore="MissingConstraints" />
 
     <ScrollView
@@ -486,7 +326,7 @@
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+
         app:layout_constraintVertical_bias="0.55"
         tools:ignore="MissingConstraints">
 

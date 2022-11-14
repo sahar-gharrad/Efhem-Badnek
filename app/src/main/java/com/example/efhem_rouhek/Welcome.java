@@ -20,11 +20,17 @@ public class Welcome extends AppCompatActivity {
     static final String PREF_NAME = "DATA";
     static final String nomShared = "nom";
     static final String prenomShared = "prenom";
-    static final String Diabete = "diabete";
+    static final String addressShared = "address";
+    static final String DiabeteShared = "diabete";
     static final String poidShared = "poid";
-    static final String Tension = "tension";
+    static final String TensionShared = "tension";
+    static final String longueurShared= "longueur";
+
     private TextInputEditText nomEdit;
     private TextInputLayout nomLayout;
+
+    private TextInputEditText AddrEdit;
+    private TextInputLayout AddrLayout;
 
     private TextInputEditText prenomEdit;
     private TextInputLayout prenomLayout;
@@ -40,14 +46,17 @@ private AppDataBase database;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        nomEdit= findViewById(R.id.txtEmail);
+        nomEdit= findViewById(R.id.txtNom);
         nomLayout= findViewById(R.id.txtLayoutName);
         prenomEdit= findViewById(R.id.txtPrenom);
         prenomLayout= findViewById(R.id.txtLayoutPrenom);
         Suivant= findViewById(R.id.btnSuivant);
         textView22=findViewById(R.id.textView22);
         database = AppDataBase.getAppDatabase(this);
-        textView22.setText(database.SymptomesDAO().getAll().toString());
+
+        AddrEdit= findViewById(R.id.txtAddr);
+        AddrLayout= findViewById(R.id.txtLayoutAddr);
+
         sharedpreference = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 
 
@@ -56,6 +65,7 @@ private AppDataBase database;
         {
             nomLayout.setError(null);
             prenomLayout.setError(null);
+            AddrLayout.setError(null);
             if (nomEdit.getText().toString().isEmpty()) {
                 nomLayout.setError("nom not be empty");
                 return;
@@ -65,13 +75,18 @@ private AppDataBase database;
                 return;
 
             }
+            if (AddrEdit.getText().toString().isEmpty()) {
+                AddrLayout.setError("Address not be empty");
+                return;
+
+            }
             // Creating an Editor object to edit(write to the file)
             SharedPreferences.Editor myEdit = sharedpreference.edit();
 
 // Storing the key and its value as the data fetched from edittext
             myEdit.putString(nomShared, nomEdit.getText().toString());
             myEdit.putString(prenomShared, prenomEdit.getText().toString());
-
+            myEdit.putString(addressShared, AddrEdit.getText().toString());
             // Once the changes have been made,
 // we need to commit to apply those changes made,
 // otherwise, it will throw an error
@@ -83,6 +98,7 @@ private AppDataBase database;
 
             Intent intent = new Intent(this ,WelcomeTwo.class);
             startActivity(intent);
+            finish();
 
 
         });

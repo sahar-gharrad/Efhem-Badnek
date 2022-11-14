@@ -19,7 +19,7 @@
 
         </activity>
         <activity
-            android:name=".maladie"
+            android:name=".maladieScreen"
             android:exported="false">
 
         </activity>

@@ -12,7 +12,7 @@
         android:layout_width="334dp"
         android:layout_height="60dp"
         android:layout_margin="10sp"
-
+        android:inputType="number"
 
         android:hint="83 KG"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="334dp"
         android:layout_height="60dp"
         android:layout_margin="10sp"
-
+        android:inputType="number"
 
         android:hint="175 cm"
 

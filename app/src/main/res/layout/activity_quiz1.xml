@@ -78,7 +78,7 @@
 
             android:layout_marginTop="40dp"
             android:background="@drawable/butonsymp"
-            android:text="Rhume"
+            android:text="Oui"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
@@ -94,7 +94,7 @@
 
 
             android:background="@drawable/butonsymp"
-            android:text="diarhée"
+            android:text="Non"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.062"

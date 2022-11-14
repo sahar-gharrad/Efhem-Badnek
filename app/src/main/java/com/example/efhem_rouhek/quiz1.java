@@ -1,34 +1,128 @@
 package com.example.efhem_rouhek;
 
+import static com.example.efhem_rouhek.Welcome.PREF_NAME;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextClock;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.efhem_rouhek.Entity.categorie;
+import com.example.efhem_rouhek.Entity.symptomes;
+import com.example.efhem_rouhek.database.AppDataBase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class quiz1 extends AppCompatActivity {
- Button suivant;
+ Button Ouibtn;
+    Button NnBTN;
  ProgressBar progressBar;
  int curentProgress=10;
+    private SharedPreferences sharedpreference;
+ String count;
+ String idmaladie ;
+ String nowQuestion ;
+ int OuiQuest;
+ private TextView countquestion ;
+    private TextView avezvous ;
+    private AppDataBase database;
+    private List<categorie> listcategorie;
+    private List<symptomes> listsymptomes;
+    private List<symptomes> listsymptomesmaladie=  new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz1);
 
+        database = AppDataBase.getAppDatabase(this);
+        listcategorie = database.CategorieDAO().getAll();
+        listsymptomes = database.SymptomesDAO().getAll();
+        Bundle extras = getIntent().getExtras();
+        sharedpreference = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                count =  sharedpreference.getString("count", "");
+        idmaladie =  sharedpreference.getString("idmaladi", "");
+        nowQuestion =  sharedpreference.getString("nowQuestion", "");
+        OuiQuest =  sharedpreference.getInt("OuiQues", 0);
+
+            //The key argument here must match that used in the other activity
+
+
+        for( int i = 0;i<listsymptomes.size();i++){
+            if(listsymptomes.get(i).id_maladie == Integer.parseInt(idmaladie)){
+                listsymptomesmaladie.add(listsymptomes.get(i));
+            }
+        }
+
+
 
 
         progressBar= (ProgressBar) findViewById(R.id.progressBar);
 
-        suivant = (Button) findViewById(R.id.suivantB);
-        Intent intent = new Intent(this ,resultat.class);
-        suivant.setOnClickListener(view ->
+        Ouibtn = (Button) findViewById(R.id.appCompatButton7);
+        NnBTN = (Button) findViewById(R.id.appCompatButton4);
+        countquestion =  findViewById(R.id.textView13);
+        countquestion.setText("Question "+nowQuestion+" de "+count);
+        avezvous =  findViewById(R.id.textView14);
+        avezvous.setText("Avez-vous "+listsymptomesmaladie.get(Integer.parseInt(nowQuestion)-1).getLabelle());
+
+        Ouibtn.setOnClickListener(view ->
         {
+            if(Integer.parseInt(nowQuestion) == listsymptomesmaladie.size()){
+                SharedPreferences.Editor myEdit = sharedpreference.edit();
+                myEdit.putInt("OuiQues",OuiQuest +1);
+                myEdit.commit();
+                Intent intent = new Intent(this ,resultat.class);
+
+                startActivity(intent);
+                finish();
+            }else{
+                // Creating an Editor object to edit(write to the file)
+                SharedPreferences.Editor myEdit = sharedpreference.edit();
+
+// Storing the key and its value as the data fetched from edittext
+                Intent intent = new Intent(this ,quiz1.class);
+                myEdit.putString("count", String.valueOf(count));
+                myEdit.putString("idmaladi", idmaladie);
+                myEdit.putString("nowQuestion", String.valueOf(Integer.parseInt(nowQuestion)+1));
+                myEdit.putInt("OuiQues",OuiQuest +1);
+                myEdit.commit();
+
+                startActivity(intent);
+                finish();
+            }
+
+
+
+        });
+        NnBTN.setOnClickListener(view ->
+        { if(Integer.parseInt(nowQuestion) == listsymptomesmaladie.size()){
+
+            Intent intent = new Intent(this ,resultat.class);
+
             startActivity(intent);
+            finish();
+        }else{
+            SharedPreferences.Editor myEdit = sharedpreference.edit();
+            Intent intent = new Intent(this ,quiz1.class);
+            myEdit.putString("count", String.valueOf(count));
+            myEdit.putString("idmaladi", idmaladie);
+            myEdit.putString("nowQuestion", String.valueOf(Integer.parseInt(nowQuestion)+1));
+
+            myEdit.commit();
+
+            startActivity(intent);
+            finish();
+        }
 
 
         });
