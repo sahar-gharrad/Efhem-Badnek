@@ -50,6 +50,7 @@ public class Poid_screen extends AppCompatActivity {
 
             Intent intent = new Intent(this ,MainActivity.class);
             startActivity(intent);
+            finish();
 
 
         });
