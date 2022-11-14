@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.efhem_rouhek.database.AppDataBase;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -26,9 +28,9 @@ public class Welcome extends AppCompatActivity {
 
     private TextInputEditText prenomEdit;
     private TextInputLayout prenomLayout;
-
+    private TextView textView22;
     private Button Suivant;
-
+private AppDataBase database;
     //stockage inetern
     private SharedPreferences sharedpreference;
 
@@ -43,7 +45,9 @@ public class Welcome extends AppCompatActivity {
         prenomEdit= findViewById(R.id.txtPrenom);
         prenomLayout= findViewById(R.id.txtLayoutPrenom);
         Suivant= findViewById(R.id.btnSuivant);
-
+        textView22=findViewById(R.id.textView22);
+        database = AppDataBase.getAppDatabase(this);
+        textView22.setText(database.SymptomesDAO().getAll().toString());
         sharedpreference = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 
 
