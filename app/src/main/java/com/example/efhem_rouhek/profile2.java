@@ -57,24 +57,35 @@ public class profile2 extends AppCompatActivity {
         String s5 = sharedpreference.getString(longueurShared, "");
         String s6 = sharedpreference.getString(DiabeteShared, "");
         String s7 = sharedpreference.getString(DataShared, "");
+
         Name.setText(s1+" "+s2);
         nom.setText("  " +s1);
         prenom.setText("  " +s2);
-        poid.setText("  " +s3+" KG");
-        dateNaissance.setText("  " +s7+ " CM");
+        poid.setText("  " +s3);
+        dateNaissance.setText("  " +s7);
         longueur.setText("  " +s5);
 
 
-            diabcheckbox.setChecked(true);
-            diabcheckbox.setEnabled(false);
+        diabcheckbox.setChecked(true);
+        diabcheckbox.setEnabled(true);
 
 
 
-            tensioncheckbox.setChecked(true);
-            tensioncheckbox.setEnabled(false);
+        tensioncheckbox.setChecked(true);
+        tensioncheckbox.setEnabled(true);
         modifier.setOnClickListener(view ->
         {
-            Intent intent = new Intent(this ,Welcome.class);
+
+            SharedPreferences.Editor myEdit = sharedpreference.edit();
+
+
+            myEdit.putString(nomShared, nom.getText().toString());
+            myEdit.putString(prenomShared, prenom.getText().toString());
+            myEdit.putString(poidShared, poid.getText().toString());
+            myEdit.putString(longueurShared, longueur.getText().toString());
+            myEdit.putString(DataShared, dateNaissance.getText().toString());
+            myEdit.commit();
+            Intent intent = new Intent(this ,profile2.class);
             startActivity(intent);
             finish();
 

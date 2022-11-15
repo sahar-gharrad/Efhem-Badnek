@@ -27,9 +27,12 @@ public class maladieScreen extends AppCompatActivity {
     String desc;
     String image;
     String nameCat;
+    String nameMalade;
     int count ;
     private ImageView imageView;
+
     private TextView textview;
+    private TextView name;
     private TextView textCount;
     private TextView textCat;
     private AppDataBase database;
@@ -51,6 +54,7 @@ public class maladieScreen extends AppCompatActivity {
             cat = extras.getString("cat");
             desc = extras.getString("desc");
             image = extras.getString("image");
+            nameMalade=extras.getString("lab");
             //The key argument here must match that used in the other activity
         }
 
@@ -74,24 +78,32 @@ System.out.println(cat);
         test= findViewById(R.id.faireTest);
         textCount= findViewById(R.id.textView8);
         textCount.setText(String.valueOf(count) );
-imageView = findViewById(R.id.imageGrand);
+
+        name= findViewById(R.id.textView17);
+        name.setText(String.valueOf(nameMalade));
+
+        imageView = findViewById(R.id.imageGrand);
 
                 textCat = findViewById(R.id.textView19);
                 textCat.setText(nameCat);
         textview = findViewById(R.id.textView18);
         textview.setText(desc);
         String uri = image;  // where myresource (without the extension) is the file
-System.out.println(cat);
+
         int imageResource =getResources().getIdentifier(uri, null,  getPackageName());
         imageView.setImageDrawable( getResources().getDrawable(imageResource));
         sharedpreference = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         test.setOnClickListener(view ->
                 {
                     SharedPreferences.Editor myEdit = sharedpreference.edit();
-
+                    myEdit.putString("image", String.valueOf(image));
                     myEdit.putString("count", String.valueOf(count));
                     myEdit.putString("idmaladi", id);
                     myEdit.putString("nowQuestion", String.valueOf(1));
+                    myEdit.putString("nameCat", String.valueOf(nameCat));
+                    myEdit.putString("lab", String.valueOf(nameMalade));
+
+
                     myEdit.putInt("OuiQues",0);
                     myEdit.commit();
 

@@ -25,6 +25,8 @@ public class Welcome extends AppCompatActivity {
     static final String poidShared = "poid";
     static final String TensionShared = "tension";
     static final String longueurShared= "longueur";
+    static final String DateShared="Datenaissance";
+
 
     private TextInputEditText nomEdit;
     private TextInputLayout nomLayout;
@@ -36,7 +38,7 @@ public class Welcome extends AppCompatActivity {
     private TextInputLayout prenomLayout;
     private TextView textView22;
     private Button Suivant;
-private AppDataBase database;
+    private AppDataBase database;
     //stockage inetern
     private SharedPreferences sharedpreference;
 

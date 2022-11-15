@@ -82,21 +82,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         int imageResource =  viewHolder.itemView.getContext().getResources().getIdentifier(uri, null,  viewHolder.itemView.getContext().getPackageName());
         viewHolder.imageview.setImageDrawable( viewHolder.itemView.getContext().getResources().getDrawable(imageResource));
-        if(m.getColor().equals("rouge")){
-            viewHolder.cardme.setCardBackgroundColor(Color.RED);
+        if(m.getColor().equals("jaune")){
+            viewHolder.cardme.setCardBackgroundColor(Color.argb(255,255,178,81));
         }else if(m.getColor().equals("bleu")){
-            viewHolder.cardme.setCardBackgroundColor(Color.BLUE);
+            viewHolder.cardme.setCardBackgroundColor(Color.argb(255,6,146,180));
+        }
+        else if(m.getColor().equals("rouge")){
+            viewHolder.cardme.setCardBackgroundColor(Color.argb(255,255,114,114));
         }
 
         viewHolder.btn.setOnClickListener(view ->
                 {
                     Intent intent = new Intent(viewHolder.itemView.getContext(), maladieScreen.class);
 int categ = m.getId_categorie();
+
 String cc = String.valueOf(categ);
 
                     intent.putExtra("id",String.valueOf(m.getId_maladie()));
                     intent.putExtra("lab",m.getLabelle());
-
                     intent.putExtra("cat",cc);
                     intent.putExtra("desc",m.getDescription());
                     intent.putExtra("image",m.getImagegrand());

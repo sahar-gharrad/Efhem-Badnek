@@ -11,6 +11,7 @@ import android.os.CountDownTimer;
 
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextClock;
 import android.widget.TextView;
@@ -26,12 +27,15 @@ import java.util.List;
 public class quiz1 extends AppCompatActivity {
  Button Ouibtn;
     Button NnBTN;
+    private ImageView imageView;
  ProgressBar progressBar;
  int curentProgress=10;
     private SharedPreferences sharedpreference;
  String count;
  String idmaladie ;
  String nowQuestion ;
+ String nameCat;
+    String namemalad;
  int OuiQuest;
  private TextView countquestion ;
     private TextView avezvous ;
@@ -39,10 +43,15 @@ public class quiz1 extends AppCompatActivity {
     private List<categorie> listcategorie;
     private List<symptomes> listsymptomes;
     private List<symptomes> listsymptomesmaladie=  new ArrayList<>();
+    private ImageView image;
+    private String imagev;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz1);
+
+
+
 
         database = AppDataBase.getAppDatabase(this);
         listcategorie = database.CategorieDAO().getAll();
@@ -52,6 +61,10 @@ public class quiz1 extends AppCompatActivity {
                 count =  sharedpreference.getString("count", "");
         idmaladie =  sharedpreference.getString("idmaladi", "");
         nowQuestion =  sharedpreference.getString("nowQuestion", "");
+        namemalad =  sharedpreference.getString("lab", "");
+        imagev=  sharedpreference.getString("image", "");
+
+
         OuiQuest =  sharedpreference.getInt("OuiQues", 0);
 
             //The key argument here must match that used in the other activity
@@ -65,6 +78,12 @@ public class quiz1 extends AppCompatActivity {
 
 
 
+        imageView = findViewById(R.id.imageGrand);
+
+        String uri = imagev;  // where myresource (without the extension) is the file
+
+        int imageResource =getResources().getIdentifier(uri, null,  getPackageName());
+        imageView.setImageDrawable( getResources().getDrawable(imageResource));
 
         progressBar= (ProgressBar) findViewById(R.id.progressBar);
 
@@ -92,6 +111,8 @@ public class quiz1 extends AppCompatActivity {
 // Storing the key and its value as the data fetched from edittext
                 Intent intent = new Intent(this ,quiz1.class);
                 myEdit.putString("count", String.valueOf(count));
+                myEdit.putString("lab", String.valueOf(namemalad));
+                myEdit.putString("image", String.valueOf(imagev));
                 myEdit.putString("idmaladi", idmaladie);
                 myEdit.putString("nowQuestion", String.valueOf(Integer.parseInt(nowQuestion)+1));
                 myEdit.putInt("OuiQues",OuiQuest +1);
@@ -105,7 +126,8 @@ public class quiz1 extends AppCompatActivity {
 
         });
         NnBTN.setOnClickListener(view ->
-        { if(Integer.parseInt(nowQuestion) == listsymptomesmaladie.size()){
+        {
+            if(Integer.parseInt(nowQuestion) == listsymptomesmaladie.size()){
 
             Intent intent = new Intent(this ,resultat.class);
 
@@ -131,19 +153,19 @@ public class quiz1 extends AppCompatActivity {
             @Override
             public void onTick(long l) {
 
-                progressBar.setProgress(curentProgress);
-                progressBar.setMax(50);
+                progressBar.setProgress(Integer.parseInt(nowQuestion));
+                progressBar.setMax(Integer.parseInt(count)-1);
             }
 
             @Override
             public void onFinish() {
                 if(curentProgress<40) {
-                    Toast.makeText(getApplicationContext(), "Il y a pas de danger",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Il y a pas de danger",Toast.LENGTH_SHORT).show();
 
 
                 } else
                 if(curentProgress>40){
-                    Toast.makeText(getApplicationContext(), "Veuillez consulter un medecin",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Veuillez consulter un medecin",Toast.LENGTH_SHORT).show();
                 }
             }
         };

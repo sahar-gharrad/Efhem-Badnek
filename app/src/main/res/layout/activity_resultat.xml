@@ -113,6 +113,7 @@
             app:layout_constraintVertical_bias="0.342" />
 
         <TextView
+            android:id="@+id/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Corona virus test"
@@ -144,229 +145,27 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
         app:layout_constraintVertical_bias="0.113" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="463dp"
-        android:layout_height="212dp"
-        android:layout_margin="10dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.162"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="345dp"
-            android:layout_height="104dp"
-            android:layout_margin="15dp"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/appCompatBon"
-                android:layout_width="376dp"
-                android:layout_height="60dp"
-                android:layout_margin="3dp"
-
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="574dp">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/idUrlImg1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerHorizontal="true"
-
-                    android:layout_marginBottom="140dp"
-                    android:elevation="15dp"
-                    android:padding="5dp"
-                    android:src="@drawable/khaled"
-                    app:shapeAppearanceOverlay="@style/Circular" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Dr. Khaled Abdelmoumen"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="210dp"
-                    android:layout_marginTop="30dp"
-
-                    android:text="Radés"
-
-
-                    />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnmMore"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginTop="15dp"
-
-                    android:background="@drawable/nextt" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="30dp"
-
-                    android:text="Généraliste"
-
-                    />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/appCompat"
-                android:layout_width="376dp"
-                android:layout_height="57dp"
-                android:layout_margin="3dp"
-
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="649dp">
-
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/idUrlImg2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerHorizontal="true"
-
-                    android:layout_marginBottom="140dp"
-                    android:elevation="15dp"
-                    android:padding="5dp"
-                    android:src="@drawable/sahar"
-                    app:shapeAppearanceOverlay="@style/Circular"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Dr. Sahar Gharrad"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="210dp"
-                    android:layout_marginTop="30dp"
-
-                    android:text="Boumhal"
-
-
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginTop="15dp"
-
-                    android:background="@drawable/nextt" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="30dp"
-
-                    android:text="Génecologue"
-
-                    />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/appCompaat"
-                android:layout_width="376dp"
-                android:layout_height="57dp"
-                android:layout_margin="3dp"
-
-                app:cardCornerRadius="20sp"
-                app:cardElevation="10dp"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="649dp">
-
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/idUrlImg2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerHorizontal="true"
-
-                    android:layout_marginBottom="140dp"
-                    android:elevation="15dp"
-                    android:padding="5dp"
-                    android:src="@drawable/khaled"
-                    app:shapeAppearanceOverlay="@style/Circular"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Dr. Khaled Abdelmoumen"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="210dp"
-                    android:layout_marginTop="30dp"
-
-
-                    android:text="Rades"
-
-
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginTop="15dp"
-
-                    android:background="@drawable/nextt" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="30dp"
-
-                    android:text="Génecologue"
-
-                    />
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
-        android:layout_width="385dp"
-        android:layout_height="92dp"
+        android:layout_width="408dp"
+        android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
         app:layout_constraintVertical_bias="0.99">
 
 
@@ -493,18 +292,18 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/docotors"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="4dp"
-                        app:srcCompat="@drawable/ic_logout" />
+                        app:srcCompat="@drawable/doctoricon" />
 
                     <TextView
                         android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:text="Log Out"
+                        android:text=" Doctors"
 
                         android:textColor="#ffffff"
                         android:textSize="12sp" />
